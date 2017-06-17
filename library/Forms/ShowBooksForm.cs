@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using library.DAO.Impl;
+using library.Model;
 
 namespace library.Forms
 {
@@ -8,6 +11,20 @@ namespace library.Forms
         public ShowBooksForm()
         {
             InitializeComponent();
+        }
+
+        private void ShowBooksForm_Load(object sender, EventArgs e)
+        {
+            FillAuthorsList();
+        }
+
+        private void FillAuthorsList()
+        {
+            AuthorDao authorDao = new AuthorDao();
+            List<Author> list = authorDao.GetList();
+            AuthorsListBox.DataSource = list;
+            AuthorsListBox.DisplayMember = "name";
+            AuthorsListBox.ValueMember = "id";
         }
 
         private void SearchFlowLayoutPanel_Resize(object sender, EventArgs e)

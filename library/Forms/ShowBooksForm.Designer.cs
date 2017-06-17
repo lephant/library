@@ -129,6 +129,7 @@ namespace library.Forms
             this.Name = "ShowBooksForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Resources.ApplicationName;
+            this.Load += new System.EventHandler(this.ShowBooksForm_Load);
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
             this.SearchFlowLayoutPanel.ResumeLayout(false);
