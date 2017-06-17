@@ -1,4 +1,6 @@
-﻿namespace library.Forms
+﻿using library.Properties;
+
+namespace library.Forms
 {
     partial class ShowBooksForm
     {
@@ -126,7 +128,7 @@
             this.MinimumSize = new System.Drawing.Size(650, 420);
             this.Name = "ShowBooksForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Электронная библиотека \"Мармыш\"";
+            this.Text = Resources.ApplicationName;
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
             this.SearchFlowLayoutPanel.ResumeLayout(false);
