@@ -18,7 +18,17 @@ namespace library.Connection
         {
             if (_sqlConnection == null)
             {
-                _sqlConnection = new MySqlConnection();
+                string serverName = "localhost";
+                string userName = "user";
+                string password = "password";
+                string dbName = "library";
+                string port = "3306";
+                string connStr = "server=" + serverName +
+                                 ";user=" + userName +
+                                 ";database=" + dbName +
+                                 ";port=" + port +
+                                 ";password=" + password + ";";
+                _sqlConnection = new MySqlConnection(connStr);
             }
             return _sqlConnection;
         }
