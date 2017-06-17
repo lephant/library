@@ -11,9 +11,10 @@ namespace library.DAO.Impl
         public List<Author> GetList()
         {
             MySqlConnection connection = Connection.Connection.GetConnection();
-            String sql = "SELECT id, fio FROM authors;";
+            String sql = "SELECT id, name FROM authors;";
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sql, connection);
             DataTable dataTable = new DataTable();
+            connection.Open();
             dataAdapter.Fill(dataTable);
 
             List<Author> authors = new List<Author>(dataTable.Rows.Count);
@@ -21,8 +22,10 @@ namespace library.DAO.Impl
             {
                 Author author = new Author();
                 author.Id = dataRow.Field<long>("id");
-                author.Fio = dataRow.Field<string>("fio");
+                author.Name = dataRow.Field<string>("name");
+                authors.Add(author);
             }
+            connection.Close();
             return authors;
         }
 
