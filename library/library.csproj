@@ -49,6 +49,11 @@
     <Compile Include="Forms\ShowBooksForm.Designer.cs">
       <DependentUpon>ShowBooksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Author.cs" />
+    <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Place.cs" />
+    <Compile Include="Model\Publisher.cs" />
+    <Compile Include="Model\UsageCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ShowBooksForm.resx">
@@ -74,8 +79,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
