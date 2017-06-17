@@ -90,6 +90,8 @@ namespace library.Forms
             this.AuthorsListBox.Name = "AuthorsListBox";
             this.AuthorsListBox.Size = new System.Drawing.Size(171, 95);
             this.AuthorsListBox.TabIndex = 1;
+            this.AuthorsListBox.DisplayMember = "name";
+            this.AuthorsListBox.ValueMember = "id";
             // 
             // PublishersListBox
             // 
@@ -99,6 +101,8 @@ namespace library.Forms
             this.PublishersListBox.Name = "PublishersListBox";
             this.PublishersListBox.Size = new System.Drawing.Size(171, 95);
             this.PublishersListBox.TabIndex = 2;
+            this.PublishersListBox.DisplayMember = "name";
+            this.PublishersListBox.ValueMember = "id";
             // 
             // PlacesListBox
             // 
@@ -108,6 +112,8 @@ namespace library.Forms
             this.PlacesListBox.Name = "PlacesListBox";
             this.PlacesListBox.Size = new System.Drawing.Size(171, 95);
             this.PlacesListBox.TabIndex = 0;
+            this.PlacesListBox.DisplayMember = "name";
+            this.PlacesListBox.ValueMember = "id";
             // 
             // UsageCategoriesListBox
             // 
@@ -116,6 +122,8 @@ namespace library.Forms
             this.UsageCategoriesListBox.Name = "UsageCategoriesListBox";
             this.UsageCategoriesListBox.Size = new System.Drawing.Size(171, 95);
             this.UsageCategoriesListBox.TabIndex = 0;
+            this.UsageCategoriesListBox.DisplayMember = "name";
+            this.UsageCategoriesListBox.ValueMember = "id";
             // 
             // ShowBooksForm
             // 

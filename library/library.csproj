@@ -49,6 +49,9 @@
     <Compile Include="Connection\Connection.cs" />
     <Compile Include="DAO\IDao.cs" />
     <Compile Include="DAO\Impl\AuthorDao.cs" />
+    <Compile Include="DAO\Impl\PlaceDao.cs" />
+    <Compile Include="DAO\Impl\PublisherDao.cs" />
+    <Compile Include="DAO\Impl\UsageCategoryDao.cs" />
     <Compile Include="Forms\ShowBooksForm.cs">
       <SubType>Form</SubType>
     </Compile>

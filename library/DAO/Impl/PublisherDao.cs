@@ -1,38 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data;
+using System.Linq;
+using System.Text;
 using library.Model;
 using MySql.Data.MySqlClient;
 
 namespace library.DAO.Impl
 {
-    public class AuthorDao : IDao<Author>
+    public class PublisherDao : IDao<Publisher>
     {
-        public List<Author> GetList()
+        public List<Publisher> GetList()
         {
             MySqlConnection connection = Connection.Connection.GetConnection();
             try
             {
-                string sql = "SELECT id, name FROM authors;";
+                string sql = "SELECT id, name FROM publishers;";
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sql, connection);
                 DataTable dataTable = new DataTable();
                 connection.Open();
                 dataAdapter.Fill(dataTable);
 
-                List<Author> authors = new List<Author>(dataTable.Rows.Count);
+                List<Publisher> publishers = new List<Publisher>(dataTable.Rows.Count);
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    Author author = new Author();
-                    author.Id = dataRow.Field<long>("id");
-                    author.Name = dataRow.Field<string>("name");
-                    authors.Add(author);
+                    Publisher publisher = new Publisher();
+                    publisher.Id = dataRow.Field<long>("id");
+                    publisher.Name = dataRow.Field<string>("name");
+                    publishers.Add(publisher);
                 }
-                return authors;
+                return publishers;
             }
             catch
             {
-                return new List<Author>(0);
+                return new List<Publisher>(0);
             }
             finally
             {
@@ -43,17 +44,17 @@ namespace library.DAO.Impl
             }
         }
 
-        public Author GetById(long id)
+        public Publisher GetById(long id)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Author entity)
+        public void Delete(Publisher entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Author entity)
+        public void Update(Publisher entity)
         {
             throw new NotImplementedException();
         }
