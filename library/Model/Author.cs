@@ -7,7 +7,7 @@ namespace library.Model
 {
     public class Author
     {
-        public long id { get; set; }
-        public string fio { get; set; }
+        public long Id { get; set; }
+        public string Fio { get; set; }
     }
 }
