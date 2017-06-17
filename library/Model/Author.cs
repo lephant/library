@@ -8,6 +8,6 @@ namespace library.Model
     public class Author
     {
         public long Id { get; set; }
-        public string Fio { get; set; }
+        public string Name { get; set; }
     }
 }
