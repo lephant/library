@@ -118,4 +118,20 @@
     <value>Электронная библиотека "Мармыш"</value>
     <comment>Имя приложения</comment>
   </data>
+  <data name="PublisherListLabelText" xml:space="preserve">
+    <value>Издательства</value>
+    <comment>Текст над списком издательств</comment>
+  </data>
+  <data name="AuthorListLabelText" xml:space="preserve">
+    <value>Авторы</value>
+    <comment>Текст над списком авторов</comment>
+  </data>
+  <data name="PlaceListLabelText" xml:space="preserve">
+    <value>Места</value>
+    <comment>Текст над списком мест</comment>
+  </data>
+  <data name="UsageCategoryListLabelText" xml:space="preserve">
+    <value>Цель</value>
+    <comment>Текст над списком целей</comment>
+  </data>
 </root>

@@ -68,5 +68,41 @@ namespace library.Properties {
                 return ResourceManager.GetString("ApplicationName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Авторы.
+        /// </summary>
+        internal static string AuthorListLabelText {
+            get {
+                return ResourceManager.GetString("AuthorListLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Места.
+        /// </summary>
+        internal static string PlaceListLabelText {
+            get {
+                return ResourceManager.GetString("PlaceListLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Издательства.
+        /// </summary>
+        internal static string PublisherListLabelText {
+            get {
+                return ResourceManager.GetString("PublisherListLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Цель.
+        /// </summary>
+        internal static string UsageCategoryListLabelText {
+            get {
+                return ResourceManager.GetString("UsageCategoryListLabelText", resourceCulture);
+            }
+        }
     }
 }
