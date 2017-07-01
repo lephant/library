@@ -1,4 +1,5 @@
-﻿using library.Properties;
+﻿using library.Controls;
+using library.Properties;
 
 namespace library.Forms
 {
@@ -34,10 +35,10 @@ namespace library.Forms
             this.ResultPanel = new System.Windows.Forms.Panel();
             this.SearchPanel = new System.Windows.Forms.Panel();
             this.SearchFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.AuthorsListBox = new System.Windows.Forms.ListBox();
-            this.PublishersListBox = new System.Windows.Forms.ListBox();
-            this.PlacesListBox = new System.Windows.Forms.ListBox();
-            this.UsageCategoriesListBox = new System.Windows.Forms.ListBox();
+            this.AuthorsListBox = new ScrollableListBox();
+            this.PublishersListBox = new ScrollableListBox();
+            this.PlacesListBox = new ScrollableListBox();
+            this.UsageCategoriesListBox = new ScrollableListBox();
             this.PublisherListLabel = new System.Windows.Forms.Label();
             this.AuthorListLabel = new System.Windows.Forms.Label();
             this.PlaceListLabel = new System.Windows.Forms.Label();
@@ -214,10 +215,10 @@ namespace library.Forms
         private System.Windows.Forms.Panel ResultPanel;
         private System.Windows.Forms.Panel SearchPanel;
         private System.Windows.Forms.FlowLayoutPanel SearchFlowLayoutPanel;
-        private System.Windows.Forms.ListBox PlacesListBox;
-        private System.Windows.Forms.ListBox UsageCategoriesListBox;
-        private System.Windows.Forms.ListBox AuthorsListBox;
-        private System.Windows.Forms.ListBox PublishersListBox;
+        private ScrollableListBox PlacesListBox;
+        private ScrollableListBox UsageCategoriesListBox;
+        private ScrollableListBox AuthorsListBox;
+        private ScrollableListBox PublishersListBox;
         private System.Windows.Forms.Label AuthorListLabel;
         private System.Windows.Forms.Label PublisherListLabel;
         private System.Windows.Forms.Label PlaceListLabel;
