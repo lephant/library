@@ -51,6 +51,9 @@ namespace library.Forms
 
         private void SearchFlowLayoutPanel_Resize(object sender, EventArgs e)
         {
+            int searchStringPaddings = SearchStringTextBox.Margin.Left + SearchStringTextBox.Margin.Right;
+            int searchStringWidth = SearchFlowLayoutPanel.Width - searchStringPaddings;
+
             int authorsPaddings = AuthorsListBox.Margin.Left + AuthorsListBox.Margin.Right;
             int authorsWidth = SearchFlowLayoutPanel.Width - authorsPaddings;
 
@@ -63,6 +66,7 @@ namespace library.Forms
             int usageCategoriesPaddings = UsageCategoriesListBox.Margin.Left + UsageCategoriesListBox.Margin.Right;
             int usageCategoriesWidth = SearchFlowLayoutPanel.Width - usageCategoriesPaddings;
 
+            SearchStringTextBox.Width = searchStringWidth;
             AuthorsListBox.Width = authorsWidth;
             PublishersListBox.Width = publishersWidth;
             PlacesListBox.Width = placesWidth;
