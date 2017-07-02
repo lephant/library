@@ -50,6 +50,9 @@
     <Compile Include="Controls\ScrollableListBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ScrollablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAO\IDao.cs" />
     <Compile Include="DAO\Impl\AuthorDao.cs" />
     <Compile Include="DAO\Impl\PlaceDao.cs" />

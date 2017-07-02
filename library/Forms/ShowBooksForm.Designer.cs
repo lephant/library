@@ -33,7 +33,7 @@ namespace library.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowBooksForm));
             this.ResultPanel = new System.Windows.Forms.Panel();
-            this.SearchPanel = new System.Windows.Forms.Panel();
+            this.SearchPanel = new ScrollablePanel();
             this.SearchFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AuthorsListBox = new ScrollableListBox();
             this.PublishersListBox = new ScrollableListBox();
@@ -213,7 +213,7 @@ namespace library.Forms
 
         #endregion
         private System.Windows.Forms.Panel ResultPanel;
-        private System.Windows.Forms.Panel SearchPanel;
+        private ScrollablePanel SearchPanel;
         private System.Windows.Forms.FlowLayoutPanel SearchFlowLayoutPanel;
         private ScrollableListBox PlacesListBox;
         private ScrollableListBox UsageCategoriesListBox;
