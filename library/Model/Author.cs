@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace library.Model
+﻿namespace library.Model
 {
     public class Author
     {
