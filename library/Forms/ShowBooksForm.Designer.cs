@@ -45,6 +45,7 @@ namespace library.Forms
             this.PlacesListBox = new library.Controls.ScrollableListBox();
             this.UsageCategoryListLabel = new System.Windows.Forms.Label();
             this.UsageCategoriesListBox = new library.Controls.ScrollableListBox();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.SearchPanel.SuspendLayout();
             this.SearchFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@ namespace library.Forms
             this.ResultPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ResultPanel.Location = new System.Drawing.Point(220, 13);
             this.ResultPanel.Name = "ResultPanel";
-            this.ResultPanel.Size = new System.Drawing.Size(409, 365);
+            this.ResultPanel.Size = new System.Drawing.Size(409, 396);
             this.ResultPanel.TabIndex = 1;
             // 
             // SearchPanel
@@ -69,7 +70,7 @@ namespace library.Forms
             this.SearchPanel.Controls.Add(this.SearchFlowLayoutPanel);
             this.SearchPanel.Location = new System.Drawing.Point(12, 12);
             this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(202, 366);
+            this.SearchPanel.Size = new System.Drawing.Size(202, 348);
             this.SearchPanel.TabIndex = 2;
             // 
             // SearchFlowLayoutPanel
@@ -215,11 +216,25 @@ namespace library.Forms
             this.UsageCategoriesListBox.TabIndex = 0;
             this.UsageCategoriesListBox.ValueMember = "id";
             // 
+            // SearchButton
+            // 
+            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SearchButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchButton.Location = new System.Drawing.Point(22, 377);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(174, 32);
+            this.SearchButton.TabIndex = 3;
+            this.SearchButton.Text = "Искать";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            // 
             // ShowBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 390);
+            this.ClientSize = new System.Drawing.Size(641, 421);
+            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.ResultPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -250,6 +265,7 @@ namespace library.Forms
         private System.Windows.Forms.Label UsageCategoryListLabel;
         private System.Windows.Forms.Label SearchStringLabel;
         private System.Windows.Forms.TextBox SearchStringTextBox;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
 

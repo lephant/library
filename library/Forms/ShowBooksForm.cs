@@ -16,8 +16,8 @@ namespace library.Forms
         private void ShowBooksForm_Load(object sender, EventArgs e)
         {
             FillAuthorsList();
-            FillPlacesList();
             FillPublishersList();
+            FillPlacesList();
             FillUsageCategoryList();
         }
 
