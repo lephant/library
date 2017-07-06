@@ -19,15 +19,6 @@ namespace library.Forms
             FillPublishersList();
             FillPlacesList();
             FillUsageCategoryList();
-
-            AuthorListLabel.MouseEnter += DelegateMouseEnterToPanel;
-            AddAuthorButton.MouseEnter += DelegateMouseEnterToPanel;
-            PublisherListLabel.MouseEnter += DelegateMouseEnterToPanel;
-            AddPublisherButton.MouseEnter += DelegateMouseEnterToPanel;
-            PlaceListLabel.MouseEnter += DelegateMouseEnterToPanel;
-            AddPlaceButton.MouseEnter += DelegateMouseEnterToPanel;
-            UsageCategoryListLabel.MouseEnter += DelegateMouseEnterToPanel;
-            AddUsageCategoryButton.MouseEnter += DelegateMouseEnterToPanel;
         }
 
         private void DelegateMouseEnterToPanel(object sender, EventArgs e)

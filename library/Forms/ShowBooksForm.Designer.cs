@@ -151,6 +151,7 @@ namespace library.Forms
             this.AddAuthorButton.Size = new System.Drawing.Size(22, 21);
             this.AddAuthorButton.TabIndex = 5;
             this.AddAuthorButton.UseVisualStyleBackColor = true;
+            this.AddAuthorButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // AuthorListLabel
             // 
@@ -163,6 +164,7 @@ namespace library.Forms
             this.AuthorListLabel.Size = new System.Drawing.Size(59, 18);
             this.AuthorListLabel.TabIndex = 4;
             this.AuthorListLabel.Text = "Авторы";
+            this.AuthorListLabel.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // AuthorsListBox
             // 
@@ -200,6 +202,7 @@ namespace library.Forms
             this.AddPublisherButton.Size = new System.Drawing.Size(22, 21);
             this.AddPublisherButton.TabIndex = 6;
             this.AddPublisherButton.UseVisualStyleBackColor = true;
+            this.AddPublisherButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // PublisherListLabel
             // 
@@ -212,6 +215,7 @@ namespace library.Forms
             this.PublisherListLabel.Size = new System.Drawing.Size(98, 18);
             this.PublisherListLabel.TabIndex = 3;
             this.PublisherListLabel.Text = "Издательства";
+            this.PublisherListLabel.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // PublishersListBox
             // 
@@ -249,6 +253,7 @@ namespace library.Forms
             this.AddPlaceButton.Size = new System.Drawing.Size(22, 21);
             this.AddPlaceButton.TabIndex = 7;
             this.AddPlaceButton.UseVisualStyleBackColor = true;
+            this.AddPlaceButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // PlaceListLabel
             // 
@@ -261,6 +266,7 @@ namespace library.Forms
             this.PlaceListLabel.Size = new System.Drawing.Size(49, 18);
             this.PlaceListLabel.TabIndex = 5;
             this.PlaceListLabel.Text = "Места";
+            this.PlaceListLabel.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // PlacesListBox
             // 
@@ -298,6 +304,7 @@ namespace library.Forms
             this.AddUsageCategoryButton.Size = new System.Drawing.Size(22, 21);
             this.AddUsageCategoryButton.TabIndex = 8;
             this.AddUsageCategoryButton.UseVisualStyleBackColor = true;
+            this.AddUsageCategoryButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // UsageCategoryListLabel
             // 
@@ -310,6 +317,7 @@ namespace library.Forms
             this.UsageCategoryListLabel.Size = new System.Drawing.Size(42, 18);
             this.UsageCategoryListLabel.TabIndex = 6;
             this.UsageCategoryListLabel.Text = "Цель";
+            this.UsageCategoryListLabel.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // UsageCategoriesListBox
             // 
