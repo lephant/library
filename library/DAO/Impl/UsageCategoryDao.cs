@@ -44,17 +44,89 @@ namespace library.DAO.Impl
 
         public UsageCategory GetById(long id)
         {
-            throw new NotImplementedException();
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "SELECT id, name FROM usage_categories WHERE id=" + id + ";";
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sql, connection);
+                DataTable dataTable = new DataTable();
+                connection.Open();
+                dataAdapter.Fill(dataTable);
+
+                UsageCategory usageCategory = new UsageCategory();
+                DataRow dataRow = dataTable.Rows[0];
+                usageCategory.Id = dataRow.Field<long>("id");
+                usageCategory.Name = dataRow.Field<string>("name");
+                return usageCategory;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
         }
 
-        public void Delete(UsageCategory entity)
+        public void Delete(UsageCategory usageCategory)
         {
-            throw new NotImplementedException();
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "DELETE FROM usage_categories WHERE id=" + usageCategory.Id + ";";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
         }
 
-        public void Update(UsageCategory entity)
+        public void Update(UsageCategory usageCategory)
         {
-            throw new NotImplementedException();
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "UPDATE usage_categories SET name=" + usageCategory.Name + " WHERE id=" + usageCategory.Id + ";";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void Insert(UsageCategory usageCategory)
+        {
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "INSERT INTO usage_categories(name) VALUES(" + usageCategory.Name + ");";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }
