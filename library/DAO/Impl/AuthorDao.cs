@@ -44,17 +44,89 @@ namespace library.DAO.Impl
 
         public Author GetById(long id)
         {
-            throw new NotImplementedException();
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "SELECT id, name FROM authors WHERE id=" + id + ";";
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sql, connection);
+                DataTable dataTable = new DataTable();
+                connection.Open();
+                dataAdapter.Fill(dataTable);
+
+                Author author = new Author();
+                DataRow dataRow = dataTable.Rows[0];
+                author.Id = dataRow.Field<long>("id");
+                author.Name = dataRow.Field<string>("name");
+                return author;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
         }
 
-        public void Delete(Author entity)
+        public void Delete(Author author)
         {
-            throw new NotImplementedException();
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "DELETE FROM authors WHERE id=" + author.Id + ";";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
         }
 
-        public void Update(Author entity)
+        public void Update(Author author)
         {
-            throw new NotImplementedException();
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "UPDATE authors SET name=" + author.Name + " WHERE id=" + author.Id + ";";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void Insert(Author author)
+        {
+            MySqlConnection connection = Connection.Connection.GetConnection();
+            try
+            {
+                string sql = "INSERT INTO authors(name) VALUES(" + author.Name + ");";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }
