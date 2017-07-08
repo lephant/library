@@ -11,5 +11,7 @@ namespace library.DAO
         void Delete(T entity);
 
         void Update(T entity);
+
+        void Insert(T entity);
     }
 }
