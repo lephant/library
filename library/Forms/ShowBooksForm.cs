@@ -15,43 +15,15 @@ namespace library.Forms
 
         private void ShowBooksForm_Load(object sender, EventArgs e)
         {
-            FillAuthorsList();
-            FillPublishersList();
-            FillPlacesList();
-            FillUsageCategoryList();
+            AuthorsListBox.DataSource = new AuthorDao().GetList();
+            PublishersListBox.DataSource = new PublisherDao().GetList();
+            PlacesListBox.DataSource = new PlaceDao().GetList();
+            UsageCategoriesListBox.DataSource = new UsageCategoryDao().GetList();
         }
 
         private void DelegateMouseEnterToPanel(object sender, EventArgs e)
         {
             SearchPanel.Focus();
-        }
-
-        private void FillAuthorsList()
-        {
-            AuthorDao authorDao = new AuthorDao();
-            List<Author> list = authorDao.GetList();
-            AuthorsListBox.DataSource = list;
-        }
-
-        private void FillPublishersList()
-        {
-            PublisherDao publisherDao = new PublisherDao();
-            List<Publisher> list = publisherDao.GetList();
-            PublishersListBox.DataSource = list;
-        }
-
-        private void FillPlacesList()
-        {
-            PlaceDao placeDao = new PlaceDao();
-            List<Place> list = placeDao.GetList();
-            PlacesListBox.DataSource = list;
-        }
-
-        private void FillUsageCategoryList()
-        {
-            UsageCategoryDao usageCategoryDao = new UsageCategoryDao();
-            List<UsageCategory> list = usageCategoryDao.GetList();
-            UsageCategoriesListBox.DataSource = list;
         }
 
         private void SearchFlowLayoutPanel_Resize(object sender, EventArgs e)
