@@ -203,6 +203,7 @@ namespace library.Forms
             this.AddPublisherButton.Size = new System.Drawing.Size(22, 21);
             this.AddPublisherButton.TabIndex = 6;
             this.AddPublisherButton.UseVisualStyleBackColor = true;
+            this.AddPublisherButton.Click += new System.EventHandler(this.AddPublisherButton_Click);
             this.AddPublisherButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // PublisherListLabel

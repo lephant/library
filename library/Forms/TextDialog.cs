@@ -16,10 +16,16 @@ namespace library.Forms
             InitializeComponent();
         }
 
-        public string Text
+        public string EditedText
         {
             get { return EditingTextBox.Text; }
             set { EditingTextBox.Text = value; }
+        }
+
+        public string FormText
+        {
+            get { return Text; }
+            set { Text = value; }
         }
 
         public bool OkResult { get; private set; }

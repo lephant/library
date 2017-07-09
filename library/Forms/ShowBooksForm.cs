@@ -68,11 +68,12 @@ namespace library.Forms
         private void AddAuthorButton_Click(object sender, EventArgs e)
         {
             TextDialog textDialog = new TextDialog();
+            textDialog.FormText = "Создание автора";
             textDialog.ShowDialog(this);
             if (textDialog.OkResult)
             {
                 Author author = new Author();
-                author.Name = textDialog.Text;
+                author.Name = textDialog.EditedText;
                 AuthorDao authorDao = new AuthorDao();
                 authorDao.Insert(author);
                 AuthorsListBox.DataSource = authorDao.GetList();
@@ -84,11 +85,12 @@ namespace library.Forms
             int clickedIndex = AuthorsListBox.ContextMenuItemIndex;
             Author author = (Author)AuthorsListBox.Items[clickedIndex];
             TextDialog textDialog = new TextDialog();
-            textDialog.Text = author.Name;
+            textDialog.EditedText = author.Name;
+            textDialog.FormText = "Редактирование автора";
             textDialog.ShowDialog(this);
             if (textDialog.OkResult)
             {
-                author.Name = textDialog.Text;
+                author.Name = textDialog.EditedText;
                 AuthorDao authorDao = new AuthorDao();
                 authorDao.Update(author);
                 AuthorsListBox.DataSource = authorDao.GetList();
@@ -101,13 +103,28 @@ namespace library.Forms
             Author author = (Author)AuthorsListBox.Items[clickedIndex];
             DialogResult dialogResult = MessageBox.Show(this,
                 "Вы уверены, что хотите удалить автора \"" + author.Name + "\"?",
-                "Удаление",
+                "Удаление автора",
                 MessageBoxButtons.OKCancel);
             if (dialogResult == DialogResult.OK)
             {
                 AuthorDao authorDao = new AuthorDao();
                 authorDao.Delete(author);
                 AuthorsListBox.DataSource = authorDao.GetList();
+            }
+        }
+
+        private void AddPublisherButton_Click(object sender, EventArgs e)
+        {
+            TextDialog textDialog = new TextDialog();
+            textDialog.FormText = "Создание издательства";
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                Publisher publisher = new Publisher();
+                publisher.Name = textDialog.EditedText;
+                PublisherDao publisherDao = new PublisherDao();
+                publisherDao.Insert(publisher);
+                PublishersListBox.DataSource = publisherDao.GetList();
             }
         }
 
