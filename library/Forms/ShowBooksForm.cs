@@ -147,7 +147,18 @@ namespace library.Forms
 
         private void DeletePublisherMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-            
+            int clickedIndex = PublishersListBox.ContextMenuItemIndex;
+            Publisher publisher = (Publisher) PublishersListBox.Items[clickedIndex];
+            DialogResult dialogResult = MessageBox.Show(this,
+                "Вы уверены, что хотите удалить издательство \"" + publisher.Name + "\"?",
+                "Удаление издательства",
+                MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                PublisherDao publisherDao = new PublisherDao();
+                publisherDao.Delete(publisher);
+                PublishersListBox.DataSource = publisherDao.GetList();
+            }
         }
 
         private void EditPlaceMenuItemOnClick(object sender, EventArgs eventArgs)
