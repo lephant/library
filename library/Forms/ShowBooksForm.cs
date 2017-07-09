@@ -65,6 +65,20 @@ namespace library.Forms
             UsageCategoriesListBox.DataSource = new UsageCategoryDao().GetList();
         }
 
+        private void AddAuthorButton_Click(object sender, EventArgs e)
+        {
+            TextDialog textDialog = new TextDialog();
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                Author author = new Author();
+                author.Name = textDialog.Text;
+                AuthorDao authorDao = new AuthorDao();
+                authorDao.Insert(author);
+                AuthorsListBox.DataSource = authorDao.GetList();
+            }
+        }
+
         private void EditAuthorMenuItemOnClick(object sender, EventArgs eventArgs)
         {
             int clickedIndex = AuthorsListBox.ContextMenuItemIndex;

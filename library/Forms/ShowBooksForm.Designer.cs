@@ -151,6 +151,7 @@ namespace library.Forms
             this.AddAuthorButton.Size = new System.Drawing.Size(22, 21);
             this.AddAuthorButton.TabIndex = 5;
             this.AddAuthorButton.UseVisualStyleBackColor = true;
+            this.AddAuthorButton.Click += new System.EventHandler(this.AddAuthorButton_Click);
             this.AddAuthorButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // AuthorListLabel
