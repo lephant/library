@@ -130,12 +130,24 @@ namespace library.Forms
 
         private void EditPublisherMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-
+            int clickedIndex = PublishersListBox.ContextMenuItemIndex;
+            Publisher publisher = (Publisher)PublishersListBox.Items[clickedIndex];
+            TextDialog textDialog = new TextDialog();
+            textDialog.FormText = "Редактирование издательства";
+            textDialog.EditedText = publisher.Name;
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                publisher.Name = textDialog.EditedText;
+                PublisherDao publisherDao = new PublisherDao();
+                publisherDao.Update(publisher);
+                PublishersListBox.DataSource = publisherDao.GetList();
+            }
         }
 
         private void DeletePublisherMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-
+            
         }
 
         private void EditPlaceMenuItemOnClick(object sender, EventArgs eventArgs)
