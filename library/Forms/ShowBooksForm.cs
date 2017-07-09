@@ -57,14 +57,44 @@ namespace library.Forms
             UsageCategoriesListBox.ContextMenu = usageCategoryContextMenu;
         }
 
+        private void ShowBooksForm_Load(object sender, EventArgs e)
+        {
+            AuthorsListBox.DataSource = new AuthorDao().GetList();
+            PublishersListBox.DataSource = new PublisherDao().GetList();
+            PlacesListBox.DataSource = new PlaceDao().GetList();
+            UsageCategoriesListBox.DataSource = new UsageCategoryDao().GetList();
+        }
+
         private void EditAuthorMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-
+            int clickedIndex = AuthorsListBox.ContextMenuItemIndex;
+            Author author = (Author)AuthorsListBox.Items[clickedIndex];
+            TextDialog textDialog = new TextDialog();
+            textDialog.Text = author.Name;
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                author.Name = textDialog.Text;
+                AuthorDao authorDao = new AuthorDao();
+                authorDao.Update(author);
+                AuthorsListBox.DataSource = authorDao.GetList();
+            }
         }
 
         private void DeleteAuthorMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-
+            int clickedIndex = AuthorsListBox.ContextMenuItemIndex;
+            Author author = (Author)AuthorsListBox.Items[clickedIndex];
+            DialogResult dialogResult = MessageBox.Show(this,
+                "Вы уверены, что хотите удалить автора \"" + author.Name + "\"?",
+                "Удаление",
+                MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                AuthorDao authorDao = new AuthorDao();
+                authorDao.Delete(author);
+                AuthorsListBox.DataSource = authorDao.GetList();
+            }
         }
 
         private void EditPublisherMenuItemOnClick(object sender, EventArgs eventArgs)
@@ -94,15 +124,7 @@ namespace library.Forms
 
         private void DeleteUsageCategoryMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-            
-        }
 
-        private void ShowBooksForm_Load(object sender, EventArgs e)
-        {
-            AuthorsListBox.DataSource = new AuthorDao().GetList();
-            PublishersListBox.DataSource = new PublisherDao().GetList();
-            PlacesListBox.DataSource = new PlaceDao().GetList();
-            UsageCategoriesListBox.DataSource = new UsageCategoryDao().GetList();
         }
 
         private void DelegateMouseEnterToPanel(object sender, EventArgs e)
