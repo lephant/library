@@ -11,6 +11,90 @@ namespace library.Forms
         public ShowBooksForm()
         {
             InitializeComponent();
+
+            MenuItem editAuthorMenuItem = new MenuItem("Редактировать");
+            editAuthorMenuItem.Click += EditAuthorMenuItemOnClick;
+            MenuItem deleteAuthorMenuItem = new MenuItem("Удалить");
+            deleteAuthorMenuItem.Click += DeleteAuthorMenuItemOnClick;
+            ContextMenu authorContextMenu = new ContextMenu(new[]
+            {
+                editAuthorMenuItem,
+                deleteAuthorMenuItem
+            });
+            AuthorsListBox.ContextMenu = authorContextMenu;
+
+            MenuItem editPublisherMenuItem = new MenuItem("Редактировать");
+            editPublisherMenuItem.Click += EditPublisherMenuItemOnClick;
+            MenuItem deletePublisherMenuItem = new MenuItem("Удалить");
+            deletePublisherMenuItem.Click += DeletePublisherMenuItemOnClick;
+            ContextMenu publisherContextMenu = new ContextMenu(new[]
+            {
+                editPublisherMenuItem,
+                deletePublisherMenuItem
+            });
+            PublishersListBox.ContextMenu = publisherContextMenu;
+
+            MenuItem editPlaceMenuItem = new MenuItem("Редактировать");
+            editPlaceMenuItem.Click += EditPlaceMenuItemOnClick;
+            MenuItem deletePlaceMenuItem = new MenuItem("Удалить");
+            deletePlaceMenuItem.Click += DeletePlaceMenuItemOnClick;
+            ContextMenu placeContextMenu = new ContextMenu(new[]
+            {
+                editPlaceMenuItem,
+                deletePlaceMenuItem
+            });
+            PlacesListBox.ContextMenu = placeContextMenu;
+
+            MenuItem editUsageCategoryMenuItem = new MenuItem("Редактировать");
+            editUsageCategoryMenuItem.Click += EditUsageCategoryMenuItemOnClick;
+            MenuItem deleteUsageCategoryMenuItem = new MenuItem("Удалить");
+            deleteUsageCategoryMenuItem.Click += DeleteUsageCategoryMenuItemOnClick;
+            ContextMenu usageCategoryContextMenu = new ContextMenu(new []
+            {
+                editUsageCategoryMenuItem,
+                deleteUsageCategoryMenuItem
+            });
+            UsageCategoriesListBox.ContextMenu = usageCategoryContextMenu;
+        }
+
+        private void EditAuthorMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void DeleteAuthorMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void EditPublisherMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void DeletePublisherMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void EditPlaceMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void DeletePlaceMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void EditUsageCategoryMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void DeleteUsageCategoryMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+            
         }
 
         private void ShowBooksForm_Load(object sender, EventArgs e)
