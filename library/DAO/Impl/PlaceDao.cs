@@ -95,7 +95,7 @@ namespace library.DAO.Impl
             MySqlConnection connection = Connection.Connection.GetConnection();
             try
             {
-                string sql = "UPDATE places SET name=" + place.Name + " WHERE id=" + place.Id + ";";
+                string sql = "UPDATE places SET name='" + place.Name + "' WHERE id=" + place.Id + ";";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -114,7 +114,7 @@ namespace library.DAO.Impl
             MySqlConnection connection = Connection.Connection.GetConnection();
             try
             {
-                string sql = "INSERT INTO places(name) VALUES(" + place.Name + ");";
+                string sql = "INSERT INTO places(name) VALUES('" + place.Name + "');";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(sql, connection);
                 command.ExecuteNonQuery();

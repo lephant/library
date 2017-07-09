@@ -95,7 +95,7 @@ namespace library.DAO.Impl
             MySqlConnection connection = Connection.Connection.GetConnection();
             try
             {
-                string sql = "UPDATE usage_categories SET name=" + usageCategory.Name + " WHERE id=" + usageCategory.Id + ";";
+                string sql = "UPDATE usage_categories SET name='" + usageCategory.Name + "' WHERE id=" + usageCategory.Id + ";";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -114,7 +114,7 @@ namespace library.DAO.Impl
             MySqlConnection connection = Connection.Connection.GetConnection();
             try
             {
-                string sql = "INSERT INTO usage_categories(name) VALUES(" + usageCategory.Name + ");";
+                string sql = "INSERT INTO usage_categories(name) VALUES('" + usageCategory.Name + "');";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(sql, connection);
                 command.ExecuteNonQuery();
