@@ -226,7 +226,19 @@ namespace library.Forms
 
         private void EditUsageCategoryMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-
+            int clickedIndex = UsageCategoriesListBox.ContextMenuItemIndex;
+            UsageCategory usageCategory = (UsageCategory)UsageCategoriesListBox.Items[clickedIndex];
+            TextDialog textDialog = new TextDialog();
+            textDialog.FormText = "Редактирование категории использования";
+            textDialog.EditedText = usageCategory.Name;
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                usageCategory.Name = textDialog.EditedText;
+                UsageCategoryDao usageCategoryDao = new UsageCategoryDao();
+                usageCategoryDao.Update(usageCategory);
+                UsageCategoriesListBox.DataSource = usageCategoryDao.GetList();
+            }
         }
 
         private void DeleteUsageCategoryMenuItemOnClick(object sender, EventArgs eventArgs)
