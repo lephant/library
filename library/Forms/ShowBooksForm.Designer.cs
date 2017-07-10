@@ -54,12 +54,15 @@ namespace library.Forms
             this.UsageCategoryListLabel = new System.Windows.Forms.Label();
             this.UsageCategoriesListBox = new library.Controls.ScrollableListBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.BookDataGrid = new System.Windows.Forms.DataGridView();
+            this.ResultPanel.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.SearchFlowLayoutPanel.SuspendLayout();
             this.AuthorsHeaderPanel.SuspendLayout();
             this.PublishersHeaderPanel.SuspendLayout();
             this.PlacesHeaderPanel.SuspendLayout();
             this.UsageCategoriesHeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // ResultPanel
@@ -68,6 +71,7 @@ namespace library.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ResultPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ResultPanel.Controls.Add(this.BookDataGrid);
             this.ResultPanel.Location = new System.Drawing.Point(220, 12);
             this.ResultPanel.Name = "ResultPanel";
             this.ResultPanel.Size = new System.Drawing.Size(409, 406);
@@ -349,6 +353,15 @@ namespace library.Forms
             this.SearchButton.Text = "Искать";
             this.SearchButton.UseVisualStyleBackColor = false;
             // 
+            // BookDataGrid
+            // 
+            this.BookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BookDataGrid.Location = new System.Drawing.Point(-1, -1);
+            this.BookDataGrid.Name = "BookDataGrid";
+            this.BookDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.BookDataGrid.Size = new System.Drawing.Size(409, 406);
+            this.BookDataGrid.TabIndex = 0;
+            // 
             // ShowBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +376,7 @@ namespace library.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Электронная библиотека \"Мармыш\"";
             this.Load += new System.EventHandler(this.ShowBooksForm_Load);
+            this.ResultPanel.ResumeLayout(false);
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
             this.SearchFlowLayoutPanel.ResumeLayout(false);
@@ -375,6 +389,7 @@ namespace library.Forms
             this.PlacesHeaderPanel.PerformLayout();
             this.UsageCategoriesHeaderPanel.ResumeLayout(false);
             this.UsageCategoriesHeaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,6 +417,7 @@ namespace library.Forms
         private System.Windows.Forms.Button AddPlaceButton;
         private System.Windows.Forms.Panel UsageCategoriesHeaderPanel;
         private System.Windows.Forms.Button AddUsageCategoryButton;
+        private System.Windows.Forms.DataGridView BookDataGrid;
     }
 }
 
