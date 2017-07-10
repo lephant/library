@@ -243,7 +243,18 @@ namespace library.Forms
 
         private void DeleteUsageCategoryMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-
+            int clickedIndex = UsageCategoriesListBox.ContextMenuItemIndex;
+            UsageCategory usageCategory = (UsageCategory)UsageCategoriesListBox.Items[clickedIndex];
+            DialogResult dialogResult = MessageBox.Show(this,
+                "Вы уверены, что хотите удалить категорию использования \"" + usageCategory.Name + "\"?",
+                "Удаление категории использования",
+                MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                UsageCategoryDao usageCategoryDao = new UsageCategoryDao();
+                usageCategoryDao.Delete(usageCategory);
+                UsageCategoriesListBox.DataSource = usageCategoryDao.GetList();
+            }
         }
 
         private void DelegateMouseEnterToPanel(object sender, EventArgs e)
