@@ -255,6 +255,7 @@ namespace library.Forms
             this.AddPlaceButton.Size = new System.Drawing.Size(22, 21);
             this.AddPlaceButton.TabIndex = 7;
             this.AddPlaceButton.UseVisualStyleBackColor = true;
+            this.AddPlaceButton.Click += new System.EventHandler(this.AddPlaceButton_Click);
             this.AddPlaceButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // PlaceListLabel
@@ -306,6 +307,7 @@ namespace library.Forms
             this.AddUsageCategoryButton.Size = new System.Drawing.Size(22, 21);
             this.AddUsageCategoryButton.TabIndex = 8;
             this.AddUsageCategoryButton.UseVisualStyleBackColor = true;
+            this.AddUsageCategoryButton.Click += new System.EventHandler(this.AddUsageCategoryButton_Click);
             this.AddUsageCategoryButton.MouseEnter += new System.EventHandler(this.DelegateMouseEnterToPanel);
             // 
             // UsageCategoryListLabel

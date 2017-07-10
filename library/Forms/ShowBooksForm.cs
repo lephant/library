@@ -161,12 +161,32 @@ namespace library.Forms
             }
         }
 
+        private void AddPlaceButton_Click(object sender, EventArgs e)
+        {
+            TextDialog textDialog = new TextDialog();
+            textDialog.FormText = "Создание места";
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                Place place = new Place();
+                place.Name = textDialog.EditedText;
+                PlaceDao placeDao = new PlaceDao();
+                placeDao.Insert(place);
+                PlacesListBox.DataSource = placeDao.GetList();
+            }
+        }
+
         private void EditPlaceMenuItemOnClick(object sender, EventArgs eventArgs)
+        {
+            
+        }
+
+        private void DeletePlaceMenuItemOnClick(object sender, EventArgs eventArgs)
         {
 
         }
 
-        private void DeletePlaceMenuItemOnClick(object sender, EventArgs eventArgs)
+        private void AddUsageCategoryButton_Click(object sender, EventArgs e)
         {
 
         }
