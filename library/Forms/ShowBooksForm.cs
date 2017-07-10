@@ -178,7 +178,19 @@ namespace library.Forms
 
         private void EditPlaceMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-            
+            int clickedIndex = PlacesListBox.ContextMenuItemIndex;
+            Place place = (Place)PlacesListBox.Items[clickedIndex];
+            TextDialog textDialog = new TextDialog();
+            textDialog.FormText = "Редактирование места";
+            textDialog.EditedText = place.Name;
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                place.Name = textDialog.EditedText;
+                PlaceDao placeDao = new PlaceDao();
+                placeDao.Update(place);
+                PlacesListBox.DataSource = placeDao.GetList();
+            }
         }
 
         private void DeletePlaceMenuItemOnClick(object sender, EventArgs eventArgs)
