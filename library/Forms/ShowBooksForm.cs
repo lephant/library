@@ -211,7 +211,17 @@ namespace library.Forms
 
         private void AddUsageCategoryButton_Click(object sender, EventArgs e)
         {
-
+            TextDialog textDialog = new TextDialog();
+            textDialog.FormText = "Создание категории использования";
+            textDialog.ShowDialog(this);
+            if (textDialog.OkResult)
+            {
+                UsageCategory usageCategory = new UsageCategory();
+                usageCategory.Name = textDialog.EditedText;
+                UsageCategoryDao usageCategoryDao = new UsageCategoryDao();
+                usageCategoryDao.Insert(usageCategory);
+                UsageCategoriesListBox.DataSource = usageCategoryDao.GetList();
+            }
         }
 
         private void EditUsageCategoryMenuItemOnClick(object sender, EventArgs eventArgs)
