@@ -195,7 +195,18 @@ namespace library.Forms
 
         private void DeletePlaceMenuItemOnClick(object sender, EventArgs eventArgs)
         {
-
+            int clickedIndex = PlacesListBox.ContextMenuItemIndex;
+            Place place = (Place) PlacesListBox.Items[clickedIndex];
+            DialogResult dialogResult = MessageBox.Show(this,
+                "Вы уверены, что хотите удалить место \"" + place.Name + "\"?",
+                "Удаление места",
+                MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                PlaceDao placeDao = new PlaceDao();
+                placeDao.Delete(place);
+                PlacesListBox.DataSource = placeDao.GetList();
+            }
         }
 
         private void AddUsageCategoryButton_Click(object sender, EventArgs e)
