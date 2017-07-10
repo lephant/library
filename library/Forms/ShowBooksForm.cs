@@ -63,6 +63,7 @@ namespace library.Forms
             PublishersListBox.DataSource = new PublisherDao().GetList();
             PlacesListBox.DataSource = new PlaceDao().GetList();
             UsageCategoriesListBox.DataSource = new UsageCategoryDao().GetList();
+            BookDataGrid.DataSource = new BookDao().GetList();
         }
 
         private void AddAuthorButton_Click(object sender, EventArgs e)

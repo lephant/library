@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="DAO\IDao.cs" />
     <Compile Include="DAO\Impl\AuthorDao.cs" />
+    <Compile Include="DAO\Impl\BookDao.cs" />
     <Compile Include="DAO\Impl\PlaceDao.cs" />
     <Compile Include="DAO\Impl\PublisherDao.cs" />
     <Compile Include="DAO\Impl\UsageCategoryDao.cs" />
