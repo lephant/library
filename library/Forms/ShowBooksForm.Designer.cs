@@ -33,6 +33,7 @@ namespace library.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowBooksForm));
             this.ResultPanel = new System.Windows.Forms.Panel();
+            this.BookDataGrid = new System.Windows.Forms.DataGridView();
             this.SearchPanel = new library.Controls.ScrollablePanel();
             this.SearchFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SearchStringLabel = new System.Windows.Forms.Label();
@@ -54,15 +55,14 @@ namespace library.Forms
             this.UsageCategoryListLabel = new System.Windows.Forms.Label();
             this.UsageCategoriesListBox = new library.Controls.ScrollableListBox();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.BookDataGrid = new System.Windows.Forms.DataGridView();
             this.ResultPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).BeginInit();
             this.SearchPanel.SuspendLayout();
             this.SearchFlowLayoutPanel.SuspendLayout();
             this.AuthorsHeaderPanel.SuspendLayout();
             this.PublishersHeaderPanel.SuspendLayout();
             this.PlacesHeaderPanel.SuspendLayout();
             this.UsageCategoriesHeaderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // ResultPanel
@@ -76,6 +76,17 @@ namespace library.Forms
             this.ResultPanel.Name = "ResultPanel";
             this.ResultPanel.Size = new System.Drawing.Size(409, 406);
             this.ResultPanel.TabIndex = 1;
+            // 
+            // BookDataGrid
+            // 
+            this.BookDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.BookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BookDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BookDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.BookDataGrid.Name = "BookDataGrid";
+            this.BookDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.BookDataGrid.Size = new System.Drawing.Size(407, 404);
+            this.BookDataGrid.TabIndex = 0;
             // 
             // SearchPanel
             // 
@@ -353,15 +364,6 @@ namespace library.Forms
             this.SearchButton.Text = "Искать";
             this.SearchButton.UseVisualStyleBackColor = false;
             // 
-            // BookDataGrid
-            // 
-            this.BookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BookDataGrid.Location = new System.Drawing.Point(-1, -1);
-            this.BookDataGrid.Name = "BookDataGrid";
-            this.BookDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.BookDataGrid.Size = new System.Drawing.Size(409, 406);
-            this.BookDataGrid.TabIndex = 0;
-            // 
             // ShowBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +379,7 @@ namespace library.Forms
             this.Text = "Электронная библиотека \"Мармыш\"";
             this.Load += new System.EventHandler(this.ShowBooksForm_Load);
             this.ResultPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).EndInit();
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
             this.SearchFlowLayoutPanel.ResumeLayout(false);
@@ -389,7 +392,6 @@ namespace library.Forms
             this.PlacesHeaderPanel.PerformLayout();
             this.UsageCategoriesHeaderPanel.ResumeLayout(false);
             this.UsageCategoriesHeaderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
