@@ -16,7 +16,8 @@ namespace library.DAO.Impl
             {
                 StringBuilder sqlBuilder = new StringBuilder();
                 sqlBuilder
-                    .Append("SELECT b.id, b.name, a.name, pl.name, us.name, b.count_of_pages ")
+                    .Append("SELECT b.id id, b.name name, a.name authorName, ")
+                    .Append("pl.name publisherName, us.name usageName, b.count_of_pages pageCount ")
                     .Append("FROM books b ")
                     .Append("INNER JOIN authors a ON b.author_id=a.id ")
                     .Append("INNER JOIN places pl ON b.place_id=pl.id ")
@@ -31,20 +32,20 @@ namespace library.DAO.Impl
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     Book book = new Book();
-                    book.Id = dataRow.Field<long>("b.id");
-                    book.Name = dataRow.Field<string>("b.name");
-                    book.CountOfPages = dataRow.Field<int>("b.count_of_pages");
+                    book.Id = dataRow.Field<long>("id");
+                    book.Name = dataRow.Field<string>("name");
+                    book.CountOfPages = dataRow.Field<int>("pageCount");
 
                     Author author = new Author();
-                    author.Name = dataRow.Field<string>("a.name");
+                    author.Name = dataRow.Field<string>("authorName");
                     book.Author = author;
 
                     Place place = new Place();
-                    place.Name = dataRow.Field<string>("pl.name");
+                    place.Name = dataRow.Field<string>("publisherName");
                     book.Place = place;
 
                     UsageCategory usageCategory = new UsageCategory();
-                    usageCategory.Name = dataRow.Field<string>("us.name");
+                    usageCategory.Name = dataRow.Field<string>("usageName");
                     book.UsageCategory = usageCategory;
                     books.Add(book);
                 }
