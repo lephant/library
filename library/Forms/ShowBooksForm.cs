@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using library.Controls;
 using library.DAO.Impl;
 using library.Model;
 
@@ -63,7 +64,36 @@ namespace library.Forms
             PublishersListBox.DataSource = new PublisherDao().GetList();
             PlacesListBox.DataSource = new PlaceDao().GetList();
             UsageCategoriesListBox.DataSource = new UsageCategoryDao().GetList();
-            BookDataGrid.DataSource = new BookDao().GetList();
+            BookDataGrid.DataSource = new BookDao().GetList().ToTable();
+            ChangeColumnNames();
+        }
+
+        private void ChangeColumnNames()
+        {
+            foreach (DataGridViewColumn column in BookDataGrid.Columns)
+            {
+                switch (column.HeaderText)
+                {
+                    case "Id":
+                        column.Visible = false;
+                        break;
+                    case "Name":
+                        column.HeaderText = "Название";
+                        break;
+                    case "AuthorName":
+                        column.HeaderText = "Автор";
+                        break;
+                    case "PlaceName":
+                        column.HeaderText = "Место";
+                        break;
+                    case "UsageCategoryName":
+                        column.HeaderText = "Цель";
+                        break;
+                    case "CountOfPages":
+                        column.HeaderText = "Стр.";
+                        break;
+                }
+            }
         }
 
         private void AddAuthorButton_Click(object sender, EventArgs e)

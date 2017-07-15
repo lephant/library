@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\Connection.cs" />
+    <Compile Include="Controls\ListExtensions.cs" />
     <Compile Include="Controls\ScrollableListBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -75,6 +76,7 @@
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Place.cs" />
     <Compile Include="Model\Publisher.cs" />
+    <Compile Include="Model\TableBook.cs" />
     <Compile Include="Model\UsageCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

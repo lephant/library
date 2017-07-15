@@ -7,9 +7,9 @@ using MySql.Data.MySqlClient;
 
 namespace library.DAO.Impl
 {
-    public class BookDao : IDao<Book>
+    public class BookDao
     {
-        public List<Book> GetList()
+        public List<TableBook> GetList()
         {
             MySqlConnection connection = Connection.Connection.GetConnection();
             try
@@ -28,32 +28,23 @@ namespace library.DAO.Impl
                 DataTable dataTable = new DataTable();
                 connection.Open();
                 dataAdapter.Fill(dataTable);
-                List<Book> books = new List<Book>(dataTable.Rows.Count);
+                List<TableBook> books = new List<TableBook>(dataTable.Rows.Count);
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    Book book = new Book();
+                    TableBook book = new TableBook();
                     book.Id = dataRow.Field<long>("id");
                     book.Name = dataRow.Field<string>("name");
                     book.CountOfPages = dataRow.Field<int>("pageCount");
-
-                    Author author = new Author();
-                    author.Name = dataRow.Field<string>("authorName");
-                    book.Author = author;
-
-                    Place place = new Place();
-                    place.Name = dataRow.Field<string>("publisherName");
-                    book.Place = place;
-
-                    UsageCategory usageCategory = new UsageCategory();
-                    usageCategory.Name = dataRow.Field<string>("usageName");
-                    book.UsageCategory = usageCategory;
+                    book.AuthorName = dataRow.Field<string>("authorName");
+                    book.PlaceName = dataRow.Field<string>("publisherName");
+                    book.UsageCategoryName = dataRow.Field<string>("usageName");
                     books.Add(book);
                 }
                 return books;
             }
             catch
             {
-                return new List<Book>(0);
+                return new List<TableBook>(0);
             }
             finally
             {

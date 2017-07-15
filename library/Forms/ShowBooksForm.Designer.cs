@@ -79,12 +79,18 @@ namespace library.Forms
             // 
             // BookDataGrid
             // 
+            this.BookDataGrid.AllowUserToAddRows = false;
+            this.BookDataGrid.AllowUserToDeleteRows = false;
+            this.BookDataGrid.AllowUserToOrderColumns = true;
+            this.BookDataGrid.AllowUserToResizeRows = false;
             this.BookDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BookDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BookDataGrid.Location = new System.Drawing.Point(0, 0);
             this.BookDataGrid.Name = "BookDataGrid";
+            this.BookDataGrid.RowHeadersVisible = false;
             this.BookDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.BookDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.BookDataGrid.Size = new System.Drawing.Size(407, 404);
             this.BookDataGrid.TabIndex = 0;
             // 
