@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using library.Controls;
 using library.DAO.Impl;
 using library.Model;
+using library.SearchCriteries;
 
 namespace library.Forms
 {
@@ -331,6 +332,43 @@ namespace library.Forms
             PlacesListBox.Width = placesWidth;
             UsageCategoriesHeaderPanel.Width = usageCategoriesHeaderWidth;
             UsageCategoriesListBox.Width = usageCategoriesWidth;
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            BookSearchCriteria criteria = new BookSearchCriteria();
+
+            criteria.Text = SearchStringTextBox.Text;
+
+            List<Author> authors = new List<Author>();
+            foreach (var selectedItem in AuthorsListBox.SelectedItems)
+            {
+                authors.Add(selectedItem as Author);
+            }
+            criteria.Authors = authors;
+
+            List<Publisher> publishers = new List<Publisher>();
+            foreach (var selectedItem in PublishersListBox.SelectedItems)
+            {
+                publishers.Add(selectedItem as Publisher);
+            }
+            criteria.Publishers = publishers;
+
+            List<Place> places = new List<Place>();
+            foreach (var selectedItem in PlacesListBox.SelectedItems)
+            {
+                places.Add(selectedItem as Place);
+            }
+            criteria.Places = places;
+
+            List<UsageCategory> usageCategories = new List<UsageCategory>();
+            foreach (var selectedItem in UsageCategoriesListBox.SelectedItems)
+            {
+                usageCategories.Add(selectedItem as UsageCategory);
+            }
+            criteria.UsageCategories = usageCategories;
+
+            BookDataGrid.DataSource = new BookDao().GetListByCriteria(criteria);
         }
     }
 }

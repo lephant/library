@@ -369,6 +369,7 @@ namespace library.Forms
             this.SearchButton.TabIndex = 3;
             this.SearchButton.Text = "Искать";
             this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // ShowBooksForm
             // 

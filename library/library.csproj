@@ -80,6 +80,7 @@
     <Compile Include="Model\UsageCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchCriteries\BookSearchCriteria.cs" />
     <EmbeddedResource Include="Forms\ShowBooksForm.resx">
       <DependentUpon>ShowBooksForm.cs</DependentUpon>
     </EmbeddedResource>
